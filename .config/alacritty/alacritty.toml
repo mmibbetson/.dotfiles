@@ -1,0 +1,38 @@
+live_config_reload = true
+
+import = [
+  # uncomment the flavour you want below:
+  "~/.config/alacritty/gruvbox-dark.toml",
+  # "~/.config/alacritty/gruvbox-light.toml"
+]
+
+[shell]
+program = "bash"
+
+[window]
+padding = { x = 10, y = 10 }
+# decorations = "None"
+opacity = 0.9
+
+[font]
+size = 16.0
+
+[font.bold]
+family = "CommitMono Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "CommitMono Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "CommitMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "CommitMono Nerd Font"
+style = "Regular"
+
+[cursor]
+style = { shape = "Beam", blinking = "Off" }
+vi_mode_style = { shape = "Block", blinking = "Off" }
