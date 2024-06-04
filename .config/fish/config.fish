@@ -50,3 +50,5 @@ fish_add_path "$HOME/.cargo/bin"
 # Node
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
 fish_add_path $PNPM_HOME
+
+zoxide init fish | source

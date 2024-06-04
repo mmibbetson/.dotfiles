@@ -2,5 +2,6 @@
 generated_completions/
 .config/fish/fish_variables*
 
-# Gtk bookmarks
-gtk*/bookmarks*
+# SSH
+
+.ssh/id*
