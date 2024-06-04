@@ -58,7 +58,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Feh for background image
-exec --no-startup-id feh --randomize --bg-fill ~/wallpapers
+exec --no-startup-id $HOME/scripts/shuffle-wallpaper.sh
 
 # Use pactl to adjust volume in PulseAudio.
 # WARN: This is for i3status but I'm using polybar. It's not causing any issues, though
@@ -187,7 +187,7 @@ bindsym $mod+Shift+comma move container to workspace prev
 bindsym $mod+Shift+period move container to workspace next
 
 # Lock screen
-bindsym $mod+Control+l exec loginctl lock-session
+bindsym $mod+Control+l exec $HOME/scripts/lock.sh
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -231,4 +231,4 @@ client.background       $black
 #
 # Gaps:
 #
-# gaps inner 15
+gaps inner 8

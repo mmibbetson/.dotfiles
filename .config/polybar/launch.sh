@@ -8,4 +8,3 @@ if type "xrandr"; then
 else
   polybar --reload default --config=$HOME/.config/polybar/config.ini &
 fi
-
