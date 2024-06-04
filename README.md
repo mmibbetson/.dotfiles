@@ -20,6 +20,8 @@ Linux Configs & Dependencies
 - [Neovim]()
   - Configured with Fennel and nfnl
   - [xclip]() # For using system clipboard through `y+` commands
+- [Emacs]()
+  - [Evil Mode]()
 - [Visual Studio Code]()
 - [JetBrains Rider]()
 
@@ -36,8 +38,13 @@ Linux Configs & Dependencies
 - [eza]()
 - [ripgrep]()
 - [fd]()
+- [sd]()
 - [fzf]()
 - [lazygit]()
+- [docker engine]()
+- [lazydocker]()
+- [hyperfine]()
+- [tokei]()
 - [jq]()
 - [navi]()
 - [ffmpeg]()
@@ -55,6 +62,11 @@ Linux Configs & Dependencies
 - [VirtualBox]()
 - [Obsidian]() # Vim motions enabled for editor
 - [RetroArch]()
+- [Flameshot]()
+- [PulseAudio Volume Control]()
+- [brightnessctl]()
+- [redshift]()
+- [nm-applet]() # And network manager in general
 
 ## Programming Languages
 
