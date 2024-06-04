@@ -182,6 +182,9 @@ bindsym $mod+Home workspace $ws1
 bindsym $mod+comma workspace prev
 bindsym $mod+period workspace next
 
+# Switch between the current and previously active workspace
+bindsym $mod+Tab workspace back_and_forth
+
 # Move focused container to previous/next workspace
 bindsym $mod+Shift+comma move container to workspace prev
 bindsym $mod+Shift+period move container to workspace next
