@@ -2,4 +2,4 @@
 
 set -xe
 
-stow --target="$HOME" --dir="$HOME/dotfiles/" .
+stow --target="$HOME" --dir="$HOME/.dotfiles/" .
