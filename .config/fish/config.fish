@@ -4,8 +4,8 @@ end
 
 set -gx fish_greeting ""
 
-# Vim-style editing
-fish_vi_key_bindings
+# fish_vi_key_bindings
+fish_default_key_bindings
 
 # Aliases
 alias ls="eza --group-directories-first --color=auto --icons=auto"
