@@ -11,6 +11,7 @@ alias ls="eza --group-directories-first --color=auto --icons=auto"
 alias la="eza --all --group-directories-first --color=auto --icons=auto"
 alias tree="eza --tree --group-directories-first --color=auto --icons=auto"
 alias em="emacsclient -c -a 'emacs'"
+alias emc="emacsclient . -a 'emacs'"
 alias lzg="lazygit"
 alias lzd="lazydocker"
 

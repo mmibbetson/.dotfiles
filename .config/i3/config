@@ -51,6 +51,9 @@ exec --no-startup-id nm-applet
 # Picom compositor
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
+# Redshift for blue light filter
+exec --no-startup-id redshift
+
 # Feh for background image
 exec --no-startup-id $HOME/scripts/shuffle-wallpaper.sh
 
