@@ -9,10 +9,15 @@ set $mod Mod4
 set $alt Mod1
 
 # Home row direction keys, like vim
-set $left Left
-set $down Down
-set $up Up
-set $right Right
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $resize_left u
+set $resize_down i
+set $resize_up o
+set $resize_right p
 
 # Your preferred terminal emulator
 set $term alacritty
@@ -60,8 +65,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Polybar
 exec --no-startup-id $HOME/.config/polybar/launch.sh
 
-# Emacs daemon
-exec --no-startup-id emacs --daemon
+# Emacs daemon (using lucid for X compatibility reasons)
+exec --no-startup-id emacs-lucid --daemon
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -73,11 +78,11 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec alacritty
 
+# start a browser
+bindsym $mod+Shift+Return exec brave-browser
+
 # start emacs client
 bindsym $mod+Control+Return exec emacsclient -c
-
-# start browser
-bindsym $mod+Shift+Return exec brave-browser
 
 # kill focused window
 bindsym $mod+q kill
@@ -100,29 +105,10 @@ bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 
 # resize window (you can also use the mouse for that)
-bindsym $mod+r mode "Resize"
-
-mode "Resize" {
-    bindsym $mod+$left  resize shrink width 10 px or 10 ppt
-    bindsym $mod+$down resize grow height 10 px or 10 ppt
-    bindsym $mod+$up resize shrink height 10 px or 10 ppt
-    bindsym $mod+$right resize grow width 10 px or 10 ppt
-
-    bindsym Escape mode "default"
-}
-
-# App launch mode
-bindsym $mod+l mode "Launch"
-
-mode "Launch" {
-    bindsym e exec emacsclient -c
-    bindsym n exec nautilus
-    bindysm b exec brave-browser
-    bindsym f exec flameshot gui
-
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-}
+bindsym $mod+$resize_left resize shrink width 10 px or 10 ppt
+bindsym $mod+$resize_down resize grow height 10 px or 10 ppt
+bindsym $mod+$resize_up resize shrink height 10 px or 10 ppt
+bindsym $mod+$resize_right resize grow width 10 px or 10 ppt
 
 # Change direction of panel split using | for horizontal and \ for vertical
 bindsym $mod+Shift+backslash split h
