@@ -35,4 +35,5 @@ mmibbetson's Neovim Config
 
 - [Gruvbox]()
 - [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
+- [Cellular Automata](https://github.com/eandrju/cellular-automaton.nvim) *just for fun*
 
