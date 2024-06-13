@@ -1,12 +1,12 @@
 configuration {
-/*	modes: "window,drun,run,ssh";*/
+	modes: "drun,run";
 	font: "Iosevka Aile 12";
 /*	location: 0;*/
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
-/*	show-icons: false;*/
-/*	terminal: "rofi-sensible-terminal";*/
+	show-icons: true;
+	terminal: "alacritty";
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
 /*	run-command: "{cmd}";*/
@@ -14,7 +14,7 @@ configuration {
 /*	run-shell-command: "{terminal} -e {cmd}";*/
 /*	window-command: "wmctrl -i -R {window}";*/
 /*	window-match-fields: "all";*/
-	icon-theme: "hicolor";
+	icon-theme: "Papirus";
 /*	drun-match-fields: "name,generic,exec,categories,keywords";*/
 /*	drun-categories: ;*/
 /*	drun-show-actions: false;*/
@@ -149,7 +149,7 @@ configuration {
       sorting-method:    "name";
   }
   icon {
-      theme: "hicolor";
+      theme: "Papirus";
   }
 }
 

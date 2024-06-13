@@ -1,3 +1,1 @@
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
+(load (expand-file-name "config.el" user-emacs-directory))

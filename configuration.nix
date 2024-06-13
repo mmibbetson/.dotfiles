@@ -48,6 +48,11 @@
     jack.enable = true;
   };
 
+  # Automatically Mount USBs
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  services.devmon.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mmibbetson = {
     isNormalUser = true;
@@ -76,23 +81,46 @@
   };
 
   # Window Manager
-  services.xserver.enable = true;
-  services.xserver.autorun = true;
-  services.xserver.windowManager.bspwm.enable = true;
-  services.picom.enable = true;
+  services.xserver = {
+    enable = true;
+    autorun = true;
+    windowManager.bspwm.enable = true;
+  };
 
-  # Enable automatic login for the user.
-  services.getty.autologinUser = "mmibbetson";
+  programs.nm-applet.enable = true;
+
+  # Music Player Daemon
+  services.mpd = {
+    enable = true;
+    musicDirectory = "/path/to/music";
+    extraConfig = ''
+      audio_output {
+        type "pulse"
+        name "Pulseaudio"
+        server "127.0.0.1"
+      }
+    '';
+
+    # Optional:
+    # network.listenAddress = "any"; # if you want to allow non-localhost connections
+    startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
+  };
 
   # Enable docker
-  #services.virtualisation.docker.enable = true;
+  virtualisation.docker.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Fonts
+  fonts.packages = with pkgs; [
+    iosevka
+    (nerdfonts.override { fonts = [ "Iosevka" "IosevkaTerm" ]; })
+  ];
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-   
+
     # CLI Programs
     alacritty
     fish
@@ -109,52 +137,55 @@
     eza
     zoxide
     lazygit
-    #lazydocker
-    #bottom
-    # mpv?
-    # mpv music equivalent?
+    zathura
+    ranger
+    lazydocker
+    bottom
+    ncmpcpp
 
     # Window Manager Utilities
-    # pavucontrol?
-    # gtk stuff?
-    # redshift?
-    # networkmanager?
+    pavucontrol
+    gruvbox-gtk-theme
+    papirus-icon-theme
+    lxappearance
+    redshift
+    picom
     polybar
+    dunst
     rofi
     feh
-    dunst
+    xfce.thunar
 
     # Text Editors
+    neovim
     emacs
-    #neovim
-    #jetbrains.rider
-    #vscode
+    jetbrains.rider
+    vscode
 
     # Graphical Programs
-    #gimp
-    #discord
+    gimp
+    mpv
+    discord
     brave
 
     # Programming Languages
-    #guile
-    #racket
     #clojure
-    # babashka?
-    # leiningen?
-    #rustup
+    #babashka
+    #racket
+    #guile
+    rustup
     gcc
-    # pnpm/node
-    # dotnet 8
-
-    # Fonts
-    iosevka
-    (nerdfonts.override { fonts = [ "IosevkaTerm" ]; })
+    luajit
+    lua54Packages.lua
+    lua54Packages.fennel
+    lua54Packages.luarocks
+    nodePackages_latest.pnpm
+    dotnetCorePackages.dotnet_8.sdk
   ];
 
   services.emacs = {
     enable = true;
-    defaultEditor = true;
-    #startWithGraphical = true;
+    defaultEditor = false;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
