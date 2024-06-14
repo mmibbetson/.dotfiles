@@ -10,6 +10,8 @@
 # Execute on start
 pgrep -x sxhkd > /dev/null || sxhkd &
 picom --config ~/.config/picom/picom.conf &
+emacs --daemon
+~/scripts/shuffle-wallpapers.sh &
 ~/.config/polybar/launch.sh &
 # redshift &
 

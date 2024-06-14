@@ -80,6 +80,9 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
+  # Gaming
+  programs.steam.enable = true;
+
   # Window Manager
   services.xserver = {
     enable = true;
@@ -138,7 +141,7 @@
     zoxide
     lazygit
     zathura
-    ranger
+    yazi
     lazydocker
     bottom
     ncmpcpp
@@ -158,7 +161,6 @@
 
     # Text Editors
     neovim
-    emacs
     jetbrains.rider
     vscode
 
@@ -167,26 +169,23 @@
     mpv
     discord
     brave
+    retroarch
+    obsidian
+    gparted
 
     # Programming Languages
-    #clojure
-    #babashka
-    #racket
-    #guile
     rustup
+    # zig
+    # gleam
     gcc
     luajit
     lua54Packages.lua
-    lua54Packages.fennel
     lua54Packages.luarocks
     nodePackages_latest.pnpm
+    bun
+    deno
     dotnetCorePackages.dotnet_8.sdk
   ];
-
-  services.emacs = {
-    enable = true;
-    defaultEditor = false;
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
