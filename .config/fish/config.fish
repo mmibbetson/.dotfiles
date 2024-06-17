@@ -1,10 +1,10 @@
 if status is-interactive
-  # Interactive commands
+    # Interactive commands
 end
 
 set -gx fish_greeting ""
 
-fish_vi_key_bindings
+fish_default_key_bindings
 
 # Aliases
 alias ls="eza --group-directories-first --color=auto --icons=auto"
@@ -15,12 +15,11 @@ alias emc="emacsclient . -a 'emacs'"
 alias lzg="lazygit"
 alias lzd="lazydocker"
 
-# May switch this to emacs once configs are ready
-if type -q nvim
-  set -gx EDITOR nvim
-  set -gx VISUAL nvim
-  set -gx MANPAGER "nvim +Man!"
-  alias vimdiff="nvim -d"
+# 
+if type -q 
+    set -gx EDITOR emacsclient -c
+    set -gx VISUAL emacsclient -c -a emacs
+    set -gx MANPAGER bat
 end
 
 # gruvbox for fzf
@@ -31,7 +30,7 @@ set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx FZF_DEFAULT_COMMAND "rg --files --hidden --follow -g \"!.git/\" 2> /dev/null"
 
 # gruvbox for bat
-set -gx BAT_THEME "gruvbox-dark"
+set -gx BAT_THEME gruvbox-dark
 
 # Path management
 # AppImages
@@ -41,7 +40,7 @@ fish_add_path "$HOME/appimages"
 fish_add_path "$HOME/scripts"
 
 # Dotnet
-fish_add_path "/usr/share/dotnet"
+fish_add_path /usr/share/dotnet
 fish_add_path "$HOME/.dotnet/tools"
 
 # Rust

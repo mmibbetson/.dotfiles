@@ -8,6 +8,7 @@
 
 ;; Add line numbers (TODO: Add relative line numbers mode)
 (global-display-line-numbers-mode 1)
+(global-hl-line-mode 1)
 
 ;; Remove startup message and switch bell to visual
 (setq inhibit-startup-message t
