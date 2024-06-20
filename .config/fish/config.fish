@@ -10,15 +10,16 @@ fish_default_key_bindings
 alias ls="eza --group-directories-first --color=auto --icons=auto"
 alias la="eza --all --group-directories-first --color=auto --icons=auto"
 alias tree="eza --tree --group-directories-first --color=auto --icons=auto"
-alias em="emacsclient -c -a 'emacs'"
-alias emc="emacsclient . -a 'emacs'"
+alias em="emacsclient -c -a=''"
+alias hx="helix"
 alias lzg="lazygit"
 alias lzd="lazydocker"
+alias dhe="distrobox-host-exec"
 
 # 
-if type -q 
-    set -gx EDITOR emacsclient -c
-    set -gx VISUAL emacsclient -c -a emacs
+if type -q
+    set -gx EDITOR emacsclient -c -a=''
+    set -gx VISUAL emacsclient -c -a=''
     set -gx MANPAGER bat
 end
 
