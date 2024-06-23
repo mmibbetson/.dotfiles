@@ -61,27 +61,27 @@ key word), use the :wait recipe keyword to block until that package has been ins
 
 For example: /(use-package general :ensure (:wait t) :demand t)/
 
-** Ivy
+** Vertico
 
 #+begin_src emacs-lisp
 
 #+end_src
 
 
-*** Council 
+*** Consult 
 
 #+begin_src emacs-lisp
 
 #+end_src
 
 
-*** Swiper
+*** ???
 
 #+begin_src emacs-lisp
 
 #+end_src
 
-*** Ivy-Rich
+*** ???
 
 #+begin_src emacs-lisp
 
@@ -173,4 +173,12 @@ It seems that for global keymaps, we have to use this /global-set-key/ function.
 #+begin_src emacs-lisp
   (use-package org
     :bind (:map org-mode-map ("C-c t" . org-babel-tangle)))
+#+end_src
+
+* Other
+
+** File Behaviour
+
+#+begin_src emacs-lisp
+  (setq make-backup-files nil)
 #+end_src

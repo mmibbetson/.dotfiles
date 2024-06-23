@@ -74,3 +74,5 @@
 
 (use-package org
   :bind (:map org-mode-map ("C-c t" . org-babel-tangle)))
+
+(setq make-backup-files nil)
