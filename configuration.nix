@@ -139,39 +139,49 @@
     bat
     eza
     zoxide
+    jq
+    yq
     lazygit
-    zathura
-    yazi
     lazydocker
+    yazi
     bottom
     ncmpcpp
 
     # Window Manager Utilities
     pavucontrol
-    gruvbox-gtk-theme
+    arc-theme
     papirus-icon-theme
-    lxappearance
     redshift
     picom
     polybar
     dunst
     rofi
     feh
-    xfce.thunar
+
+    # Virtualisation
+    qemu
+    quickemu
+    quickgui
 
     # Text Editors
+    emacs
     helix
     jetbrains.rider
-    vscode
+    vscodium
 
     # Graphical Programs
     gimp
     mpv
     discord
     brave
+    firefox
     retroarch
-    obsidian
     gparted
+    xfce.thunar
+    evince
+    postman
+    protonup-qt
+    xivlauncher
 
     # Programming Languages
     # rustup
@@ -188,6 +198,18 @@
     dotnetCorePackages.dotnet_8.sdk
   ];
 
+  # Default Applications
+  xdg.mime.defaultApplications = {
+    "application/pdf" = "evince.desktop";       # Open PDF files in Evince
+    "audio/*" = "mpv.desktop";                  # Open audio files in MPV
+    "video/*" = "mpv.desktop";                  # Open video files in MPV
+    "text/html" = "brave.desktop";              # Open HTML files in Brave browser
+    "application/xhtml+xml" = "brave.desktop";  # Open XHTML files in Brave browser
+    "image/*" = "feh.desktop";                  # Open any other image types in Feh
+    "application/*" = "emacs.desktop";          # Open any other application types in Emacs
+    "text/*" = "emacs.desktop";                 # Open any other text files in Emacs
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -197,6 +219,12 @@
   # };
 
   # List services that you want to enable:
+
+  # Emacs Daemon
+  services.emacs = {
+    enable = true;
+    defaultEditor = true;
+  };
 
   # Enable the OpenSSH daemon
   services.openssh.enable = true;
