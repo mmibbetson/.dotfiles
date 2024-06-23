@@ -157,6 +157,7 @@
     dunst
     rofi
     feh
+    xclip
 
     # Virtualisation
     qemu
