@@ -95,7 +95,7 @@
   # Music Player Daemon
   services.mpd = {
     enable = true;
-    musicDirectory = "/path/to/music";
+    musicDirectory = "~/Music";
     extraConfig = ''
       audio_output {
         type "pulse"
@@ -158,6 +158,7 @@
     rofi
     feh
     xclip
+    flameshot
 
     # Virtualisation
     qemu
