@@ -1,21 +1,20 @@
-dotfiles
-========
+* dotfiles
 
 Linux Configs & Dependencies
 
 ---
 
-## Fonts
+** Fonts
 
 - [CommitMono]()
 - [CommitMono Nerd Font]()
 - [Inter]()
 
-## Theme
+** Theme
 
 - [Gruvbox](https://github.com/morhetz/gruvbox)
 
-## Editors
+** Editors
 
 - [Neovim]()
   - Configured with Fennel and nfnl
@@ -25,12 +24,12 @@ Linux Configs & Dependencies
 - [Visual Studio Code]()
 - [JetBrains Rider]()
 
-## Shell
+** Shell
 
 - [bash]() # login shell
 - [fish]() # interactive shell
 
-## CLI Tools
+** CLI Tools
 
 - [git]()
 - [stow]()
@@ -50,11 +49,11 @@ Linux Configs & Dependencies
 - [ffmpeg]()
 - [pandoc]()
 
-## Communications
+** Communications
 
 - [Discord]()
 
-## Utilities
+** Utilities
 
 - [Brave]() # With 1password and vimium extensions
 - [GIMP]()
@@ -68,7 +67,7 @@ Linux Configs & Dependencies
 - [redshift]()
 - [nm-applet]() # And network manager in general
 
-## Programming Languages
+** Programming Languages
 
 - [Clojure]()
 - [Racket]()

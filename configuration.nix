@@ -160,7 +160,7 @@
     xfce.thunar
 
     # Text Editors
-    neovim
+    helix
     jetbrains.rider
     vscode
 
@@ -174,13 +174,14 @@
     gparted
 
     # Programming Languages
-    rustup
+    # rustup
     # zig
-    # gleam
     gcc
-    luajit
-    lua54Packages.lua
-    lua54Packages.luarocks
+    guile
+    racket
+    clojure
+    leiningen
+    babashka
     nodePackages_latest.pnpm
     bun
     deno
@@ -197,8 +198,8 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  # Enable the OpenSSH daemon
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
