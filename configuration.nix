@@ -69,6 +69,7 @@
       
       # CLI Programs
       alacritty
+      starship
       powershell
       fastfetch
       fzf
@@ -89,6 +90,7 @@
       yazi
       bottom
       ncmpcpp
+      zellij
 
       # Window Manager Utilities
       pavucontrol
