@@ -1,8 +1,3 @@
-# If running interactively, start fish
-if [[ $- == *i* ]]; then
-  exec fish
-fi
-
 function add_to_path {
   case ":$PATH:" in
     *":$1:"*) :;; # already there

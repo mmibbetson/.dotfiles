@@ -1,35 +1,35 @@
-* dotfiles
+# dotfiles
 
 Linux Configs & Dependencies
 
 ---
 
-** Fonts
+## Fonts
 
 - [CommitMono]()
 - [CommitMono Nerd Font]()
 - [Inter]()
 
-** Theme
+## Theme
 
 - [Gruvbox](https://github.com/morhetz/gruvbox)
 
-** Editors
+## Dotfile Management
 
-- [Neovim]()
-  - Configured with Fennel and nfnl
-  - [xclip]() # For using system clipboard through `y+` commands
-- [Emacs]()
-  - [Evil Mode]()
+- [chezmoi]()
+
+## Editors
+
+- [Helix]()
 - [Visual Studio Code]()
 - [JetBrains Rider]()
 
-** Shell
+## Shell
 
-- [bash]() # login shell
-- [fish]() # interactive shell
+- [zsh]() *login shell*
+  - [starship]() *prompt*
 
-** CLI Tools
+## CLI Tools
 
 - [git]()
 - [stow]()
@@ -40,26 +40,37 @@ Linux Configs & Dependencies
 - [sd]()
 - [fzf]()
 - [lazygit]()
-- [docker engine]()
-- [lazydocker]()
 - [hyperfine]()
 - [tokei]()
 - [jq]()
+- [yq]()
 - [navi]()
 - [ffmpeg]()
 - [pandoc]()
+- [just]()
+- []()
 
-** Communications
+## Containers
+
+- [cockpit]()
+  - []()
+- [podman]()
+  - [podman-compose]()
+  - [podman-docker]()
+- [docker engine]()
+  - [docker compose]()
+- [lazydocker]()
+
+## Communications
 
 - [Discord]()
 
-** Utilities
+## Utilities
 
 - [Brave]() # With 1password and vimium extensions
 - [GIMP]()
 - [VLC]()
 - [VirtualBox]()
-- [Obsidian]() # Vim motions enabled for editor
 - [RetroArch]()
 - [Flameshot]()
 - [PulseAudio Volume Control]()
@@ -67,18 +78,14 @@ Linux Configs & Dependencies
 - [redshift]()
 - [nm-applet]() # And network manager in general
 
-** Programming Languages
+## Programming Languages
 
-- [Clojure]()
-- [Racket]()
-- [Fennel]()
-- [Lua]()
-  - [luajit]()
-  - [luarocks]()
+- [Zig]()
+- [Go]()
 - [JavaScript]()
   - [pnpm]()
   - [TypeScript]()
   - [Prettier]()
   - [ESLint]()
-- [Rust]()
 - [Dotnet]()
+- [Rust]() *This is mostly for building from source and dependencies*
