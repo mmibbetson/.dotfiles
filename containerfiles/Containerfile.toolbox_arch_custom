@@ -1,0 +1,63 @@
+# Start from the Arch toolbox base image
+FROM quay.io/toolbx/arch-toolbox:latest
+
+# Switch to root to perform system-wide changes
+USER root
+
+# Update the system and install necessary packages
+RUN pacman -Syu --noconfirm && \
+    pacman -S --noconfirm \
+    git \
+    rustup \
+    base-devel \
+    zsh \
+    starship \
+    chezmoi \
+    podman-compose \
+    helix \
+    eza \
+    ripgrep \
+    fd \
+    sd \
+    fzf \
+    bat \
+    zoxide \
+    zellij \
+    yazi \
+    bottom \
+    hyperfine \
+    tokei \
+    dust \
+    fastfetch \
+    hurl \
+    navi \
+    ollama \
+    lazygit \
+    ffmpeg \
+    pandoc \
+    jq \
+    yq \
+    pnpm \
+    deno \
+    dotnet-sdk \
+    go \
+    zig
+
+# Set up rustup
+RUN rustup default stable
+
+# Install paru (AUR helper)
+RUN git clone https://aur.archlinux.org/paru.git /tmp/paru && \
+    cd /tmp/paru && \
+    makepkg -si --noconfirm && \
+    cd / && \
+    rm -rf /tmp/paru
+
+# Clean up
+RUN pacman -Scc --noconfirm
+
+# Switch back to the default user
+USER toolbox
+
+# Set ZSH as the default shell
+RUN sudo chsh -s /usr/bin/zsh toolbox

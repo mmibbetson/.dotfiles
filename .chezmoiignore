@@ -1,0 +1,14 @@
+# Ignore README and LICENSE files
+README.md
+LICENSE
+
+# Ignore all .log files
+*.log
+
+# Ignore the entire .cache directory
+.cache
+
+# Ignore files only on macOS
+{{ if eq .chezmoi.os "darwin" }}
+.linux_specific_file
+{{ end }}
