@@ -95,12 +95,16 @@ or example: /(use-package general :ensure (:wait t) :demand t)/
 
 ** Org Roam
 
+Need to do some more research, I may not use this.
+
 #+begin_src emacs-lisp
 
 #+end_src
 
 
 ** Org Modern
+
+Alternative to combining org-bullets with other things.
 
 #+begin_src emacs-lisp
 
@@ -125,7 +129,7 @@ or example: /(use-package general :ensure (:wait t) :demand t)/
 
 ** Avy
 
-Rapid, convenient movement through text
+Rapid, convenient movement through text. Ala ~gw~ in Helix or the million Neovim ones like ~Flash~ and ~Sneak~
 
 #+begin_src emacs-lisp
 
