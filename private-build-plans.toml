@@ -1,0 +1,16 @@
+[buildPlans.IosevkaCustom]
+family = "Iosevka Custom"
+spacing = "normal"
+serifs = "sans"
+noCvSs = true
+exportGlyphNames = false
+
+[buildPlans.IosevkaCustom.variants.design]
+underscore = "low"
+at = "fourfold-tall"
+percent = "rings-continuous-slash"
+lig-equal-chain = "without-notch"
+lig-hyphen-chain = "without-notch"
+
+  [buildPlans.IosevkaCustom.ligations]
+  inherits = "dlig"
