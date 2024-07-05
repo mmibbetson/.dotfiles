@@ -5,12 +5,24 @@
 #+OPTIONS: toc:2
 #+PROPERTY: header-args:emacs-lisp :tangle config.el
 
-* Packages
+* Loading Configuration
+
+We tell ~init.el~ (which is loaded on startup) to load ~config.el~ (which is where we will be outputting most of our config into).
+
+#+begin_src emacs-lisp :tangle init.el
+  (load (expand-file-name "config.el" user-emacs-directory))
+#+end_src
+
+
+* Package Management
 
 ** Elpaca
 
-This is the setup for the asynchronous package manager. Note that /(setq package-enable-at-startup nil)/
-has been added to /early-init.el/ to ensure there is no conflict with Emacs' default /package.el/.
+This is the setup for the asynchronous package manager. Note that we early init emacs to turn off a package setting to ensure there is no conflict with Emacs' default /package.el/.
+
+#+begin_src emacs-lisp :tangle early-init.el
+  (setq package-enable-at-startup nil)
+#+end_src
 
 #+begin_src emacs-lisp
   (defvar elpaca-installer-version 0.7)
@@ -58,8 +70,63 @@ has been added to /early-init.el/ to ensure there is no conflict with Emacs' def
 
 When installing a package which modifies a form used at the top-level (e.g. a package which adds a use-package
 key word), use the :wait recipe keyword to block until that package has been installed/configured.
+or example: /(use-package general :ensure (:wait t) :demand t)/
 
-For example: /(use-package general :ensure (:wait t) :demand t)/
+
+* Notes and Writing
+
+** Org
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** Org Agenda
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** Org Roam
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** Org Modern
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** ToC Org
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** Denote
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+* Utilities
+
+** Avy
+
+Rapid, convenient movement through text
+
+#+begin_src emacs-lisp
+
+#+end_src
+
 
 ** Vertico
 
@@ -68,40 +135,132 @@ For example: /(use-package general :ensure (:wait t) :demand t)/
 #+end_src
 
 
-*** Consult 
+** Consult 
 
 #+begin_src emacs-lisp
 
 #+end_src
 
 
-*** ???
-
-#+begin_src emacs-lisp
-
-#+end_src
-
-*** ???
-
-#+begin_src emacs-lisp
-
-#+end_src
-
-** Which-Key 
+** Corfu
 
 #+begin_src emacs-lisp
 
 #+end_src
 
 
-** Org 
+** Marginalia
 
 #+begin_src emacs-lisp
 
 #+end_src
 
 
-*** Org-Roam 
+** Embark
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** Orderless
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** Jinx
+
+Spellchecking with Hunspell
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** Which-Key
+
+which-key is built into emacs 30!
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** Magit
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** Dired
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+* Programming Languages
+
+** LSP
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** Lisp
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** Clojure
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** Scheme
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** Racket
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** JavaScript
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** .NET
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** YAML
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** Zig
 
 #+begin_src emacs-lisp
 
@@ -114,11 +273,12 @@ I prefer a minimal visual aesthetic.
 
 ** Fonts
 
-arstgmneio
+Iosevka variants galore
 
 #+begin_src emacs-lisp
 
 #+end_src
+
 
 ** Theme
 
@@ -127,6 +287,21 @@ This theme is temporary!
 #+begin_src emacs-lisp
   (load-theme 'modus-vivendi t)
 #+end_src
+
+
+** Solaire Mode
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+
+** Modeline
+
+#+begin_src emacs-lisp
+
+#+end_src
+
 
 ** Bars
 
@@ -137,6 +312,7 @@ Turn off the bars from the default UI.
   (tool-bar-mode -1)
   (menu-bar-mode -1)
 #+end_src
+
 
 ** Lines
 
@@ -149,6 +325,7 @@ Add relative line numbers, truncate, and highlight current line
   (setq display-line-numbers 'relative)
 #+end_src
 
+
 ** Miscellaneous
 
 Remove startup message and switch bell to visual
@@ -157,6 +334,7 @@ Remove startup message and switch bell to visual
   (setq inhibit-startup-message t
 	visible-bell t)
 #+end_src
+
 
 * Keybindings
 
@@ -168,12 +346,14 @@ It seems that for global keymaps, we have to use this /global-set-key/ function.
   (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 #+end_src
 
+
 ** Org Mode Bindings
 
 #+begin_src emacs-lisp
   (use-package org
     :bind (:map org-mode-map ("C-c t" . org-babel-tangle)))
 #+end_src
+
 
 * Other
 
@@ -182,3 +362,4 @@ It seems that for global keymaps, we have to use this /global-set-key/ function.
 #+begin_src emacs-lisp
   (setq make-backup-files nil)
 #+end_src
+

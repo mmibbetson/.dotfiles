@@ -165,7 +165,8 @@
     desktopManager.gnome.enable = true;
    };
 
-  programs.nm-applet.enable = true;
+  # Not sure if I need this if I'm not using a TWM?
+  # programs.nm-applet.enable = true;
 
   # Music Player Daemon
   services.mpd = {
