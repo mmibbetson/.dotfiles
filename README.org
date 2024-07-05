@@ -6,87 +6,87 @@ Linux Configs & Dependencies
 
 ** Fonts
 
-- [CommitMono]()
-- [CommitMono Nerd Font]()
-- [Inter]()
+- Iosevka Prime (Custom builds of [[https://github.com/be5invis/Iosevka][Iosevka]], and a patched Nerd Font)
+- [[][IosevkaTerm Nerd Font]]
+- [[][Inter]]
 
 ** Themes
 
-- [Gruvbox](https://github.com/morhetz/gruvbox)
+- [[https://github.com/morhetz/gruvbox][Gruvbox]]
 
 ** Dotfile Management
 
-- [GNU Stow]()
+- [[][GNU Stow]]
 
 ** Editors
 
-- [GNU Emacs]()
-- [Visual Studio Code]()
-- [JetBrains Rider]()
+- [[][GNU Emacs]]
+- [[][Visual Studio Code]]
+- [[][JetBrains Rider]]
 
 ** Shell
 
-- [zsh]() *login shell*
-  - [starship]() *prompt*
+- [[][zsh]] *login shell*
+  - [[][starship]] *prompt*
 
 ** CLI Tools
 
-- [git]()
-- [stow]()
-- [zoxide]()
-- [eza]()
-- [ripgrep]()
-- [fd]()
-- [sd]()
-- [fzf]()
-- [lazygit]()
-- [hyperfine]()
-- [tokei]()
-- [jq]()
-- [yq]()
-- [navi]()
-- [ffmpeg]()
-- [pandoc]()
-- [just]()
+- [[][git]]
+- [[][stow]]
+- [[][zoxide]]
+- [[][eza]]
+- [[][ripgrep]]
+- [[][fd]]
+- [[][sd]]
+- [[][fzf]]
+- [[][lazygit]]
+- [[][hyperfine]]
+- [[][tokei]]
+- [[][jq]]
+- [[][yq]]
+- [[][navi]]
+- [[][ffmpeg]]
+- [[][pandoc]]
+- [[][just]]
 
 ## Containers
 
-- [cockpit]()
-  - []()
-- [podman]()
-  - [podman-compose]()
-  - [podman-docker]()
+- [[][cockpit]]
+- [[][podman]]
+  - [[][podman-compose]]
+  - [[][podman-docker]]
 
 ## Communications
 
-- [Discord]()
+- [[][Discord]]
 
 ## Utilities
 
-- [Alacritty]()
-- [Meld]()
-- [Podman Desktop]()
-- [Koodoo Reader]()
-- [Cockpit]()
-- [Brave]() # With 1password and vimium extensions
-- [GIMP]()
-- [mpv]()
-- [RetroArch]()
+- [[][Alacritty]]
+- [[][Meld]]
+- [[][Podman Desktop]]
+- [[][Koodoo Reader]]
+- [[][Cockpit]]
+- [[][Brave]] # With 1password and vimium extensions
+- [[][GIMP]]
+- [[][mpv]]
+- [[][RetroArch]]
 
 ## Programming Languages
 
-- [Guile]()
-- [Racket]()
-- [Clojure]()
-  - [Leiningen]()
-  - [Babashka]()
-- [Fennel]()
-- [Janet]()
-- [Zig]()
-- [JavaScript]()
-  - [pnpm]()
-  - [TypeScript]()
-  - [Prettier]()
-  - [ESLint]()
-- [Dotnet]()
-- [Rust]() *This is mostly for building from source and dependencies*
+- [[][Guile]]
+- [[][Racket]]
+- [[][Clojure]]
+  - [[][Leiningen]]
+  - [[][Babashka]]
+- [[][Fennel]]
+- [[][Janet]]
+- [[][Zig]]
+- [[][JavaScript]]
+  - [[][pnpm]]
+  - [[][Bun]]
+  - [[][TypeScript]]
+  - [[][Prettier]]
+  - [[][ESLint]]
+- [[][Dotnet]]
+- [[][Rust]] *This is mostly for building from source and dependencies*
