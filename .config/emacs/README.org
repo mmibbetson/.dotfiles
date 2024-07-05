@@ -5,6 +5,10 @@
 #+OPTIONS: toc:2
 #+PROPERTY: header-args:emacs-lisp :tangle config.el
 
+* INSPIRATION
+
+https://codeberg.org/ashton314/emacs-bedrock
+
 * Loading Configuration
 
 We tell ~init.el~ (which is loaded on startup) to load ~config.el~ (which is where we will be outputting most of our config into).
