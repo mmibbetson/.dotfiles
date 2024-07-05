@@ -1,35 +1,35 @@
-# dotfiles
+* dotfiles
 
 Linux Configs & Dependencies
 
----
+-----
 
-## Fonts
+** Fonts
 
 - [CommitMono]()
 - [CommitMono Nerd Font]()
 - [Inter]()
 
-## Theme
+** Themes
 
 - [Gruvbox](https://github.com/morhetz/gruvbox)
 
-## Dotfile Management
+** Dotfile Management
 
-- [chezmoi]()
+- [GNU Stow]()
 
-## Editors
+** Editors
 
-- [Helix]()
+- [GNU Emacs]()
 - [Visual Studio Code]()
 - [JetBrains Rider]()
 
-## Shell
+** Shell
 
 - [zsh]() *login shell*
   - [starship]() *prompt*
 
-## CLI Tools
+** CLI Tools
 
 - [git]()
 - [stow]()
@@ -48,7 +48,6 @@ Linux Configs & Dependencies
 - [ffmpeg]()
 - [pandoc]()
 - [just]()
-- []()
 
 ## Containers
 
@@ -57,9 +56,6 @@ Linux Configs & Dependencies
 - [podman]()
   - [podman-compose]()
   - [podman-docker]()
-- [docker engine]()
-  - [docker compose]()
-- [lazydocker]()
 
 ## Communications
 
@@ -67,21 +63,26 @@ Linux Configs & Dependencies
 
 ## Utilities
 
+- [Alacritty]()
+- [Meld]()
+- [Podman Desktop]()
+- [Koodoo Reader]()
+- [Cockpit]()
 - [Brave]() # With 1password and vimium extensions
 - [GIMP]()
-- [VLC]()
-- [VirtualBox]()
+- [mpv]()
 - [RetroArch]()
-- [Flameshot]()
-- [PulseAudio Volume Control]()
-- [brightnessctl]()
-- [redshift]()
-- [nm-applet]() # And network manager in general
 
 ## Programming Languages
 
+- [Guile]()
+- [Racket]()
+- [Clojure]()
+  - [Leiningen]()
+  - [Babashka]()
+- [Fennel]()
+- [Janet]()
 - [Zig]()
-- [Go]()
 - [JavaScript]()
   - [pnpm]()
   - [TypeScript]()
