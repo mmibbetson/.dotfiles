@@ -40,6 +40,74 @@
 (elpaca elpaca-use-package
   (elpaca-use-package-mode))
 
+(use-package org
+  :bind (:map org-mode-map ("C-c t" . org-babel-tangle)))
+
+;; From the org-modern recommendations
+(setq org-auto-align-tags nil
+      org-tags-column 0
+      org-catch-invisible-edits 'show-and-error
+      org-special-ctrl-a/e t
+      org-insert-heading-respect-content t
+      org-hide-emphasis-markers t
+      org-pretty-entities t)
+
+;; Quick blocks
+(require 'org-tempo)
+
+(setq org-agenda-tags-column 0
+      org-agenda-block-separator ?─
+      org-agenda-time-grid
+      '((daily today require-timed)
+	(800 1000 1200 1400 1600 1800 2000)
+	" ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
+      org-agenda-current-time-string
+      "◀── now ─────────────────────────────────────────────────")
+
+(use-package org-modern
+  :ensure t
+  :demand t
+  :init (add-hook 'org-mode-hook #'org-modern-mode)
+        (add-hook 'org-agenda-finalize-hook #'org-modern-agenda))
+
+(use-package toc-org
+    :commands toc-org-enable
+    :init (add-hook 'org-mode-hook 'toc-org-enable))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(use-package which-key :ensure t :demand t :config (which-key-mode))
+
+(defun +elpaca-unload-seq (e)
+  (and (featurep 'seq) (unload-feature 'seq t))
+  (elpaca--continue-build e))
+
+;; You could embed this code directly in the reicpe, I just abstracted it into a function.
+(defun +elpaca-seq-build-steps ()
+  (append (butlast (if (file-exists-p (expand-file-name "seq" elpaca-builds-directory))
+		       elpaca--pre-built-steps elpaca-build-steps))
+	  (list '+elpaca-unload-seq 'elpaca--activate-package)))
+
+(elpaca `(seq :build ,(+elpaca-seq-build-steps)))
+
+(use-package transient :ensure t :demand t)
+(use-package magit :after transient  :ensure t :demand t)
 
 
 
@@ -61,40 +129,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+(set-face-attribute 'default nil :family "Iosevka")
+(set-face-attribute 'variable-pitch nil :family "Iosevka Aile")
 
 (load-theme 'modus-vivendi t)
+
+(add-to-list 'default-frame-alist '(alpha-background . 90))
 
 
 
@@ -109,12 +149,18 @@
 (global-visual-line-mode t)
 (setq display-line-numbers 'relative)
 
+(delete-selection-mode 1)
+(electric-indent-mode -1)
+(global-auto-revert-mode t)
 (setq inhibit-startup-message t
       visible-bell t)
 
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+;; Zoom in and out
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+(global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
+(global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
 
-(use-package org
-  :bind (:map org-mode-map ("C-c t" . org-babel-tangle)))
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 (setq make-backup-files nil)

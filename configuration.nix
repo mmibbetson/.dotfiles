@@ -34,7 +34,6 @@
   services.xserver = {
     xkb.layout = "us";
     xkb.variant = "";
-    desktopManager.xterm.enable = false;
   };
 
   # Enable sound with pipewire.
@@ -58,15 +57,45 @@
 
   # Interactive Shell
   programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+
+  # Deduplicate nix store on a timer
+  nix.optimise.automatic = true;
+
+  # Delete old generations
+  nix.gc.automatic = true;
+  nix.gc.dates = "weekly";
+  nix.gc.options = "--delete-older-than 30d";
+
+  # Version Control
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+  };
+
+  # Virtualisation (Podman)
+  # Enable common container config files in /etc/containers
+  virtualisation.containers.enable = true;
+  virtualisation = {
+    podman = {
+      enable = true;
+
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mmibbetson = {
     isNormalUser = true;
     description = "Matthew Ibbetson";
-    extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh
+    extraGroups = [ "networkmanager" "wheel" "plugdev" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
-      
+
       # CLI Programs
       alacritty
       starship
@@ -80,6 +109,7 @@
       unzip
       ripgrep
       fd
+      sd
       bat
       eza
       zoxide
@@ -87,6 +117,10 @@
       yq
       lazygit
       bottom
+      yazi
+      navi
+      hyperfine
+      tokei
       papirus-icon-theme
       xclip
       
@@ -94,14 +128,14 @@
       qemu
       quickemu
       quickgui
-      podman
+      distrobox
       podman-compose
       podman-desktop
       
       # Text Editors
       emacs
       jetbrains.rider
-      vscodium
+      vscode
 
       # Graphical Programs
       gimp
@@ -111,8 +145,10 @@
       firefox
       gparted
       postman
+      gnome.gnome-tweaks
       protonup-qt
-      xivlauncher
+      retroarchFull
+      heroic
 
       # Programming Languages
       guile
@@ -122,14 +158,24 @@
       leiningen
       lua54Packages.lua
       lua54Packages.fennel
-      luajitPackages.luajit
+      luajit
       rustup
+      zig
       gcc
-      nodePackages_latest.pnpm
+      gdb
+      valgrind
+      nodejs_22
+      corepack_22
       deno
+      bun
       dotnetCorePackages.dotnet_8.sdk    
     ];
   };
+
+  # Steam
+  hardware.steam-hardware.enable = true;
+  programs.steam.enable = true;
+  programs.steam.remotePlay.openFirewall = true;
 
   # Su stuff
   security.sudo.enable = true;
@@ -151,39 +197,50 @@
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
-
-  # Gaming
-  programs.steam.enable = true;
 
   # Window Manager
   services.xserver = {
     enable = true;
-    autorun = true;
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
+    desktopManager.xterm.enable = false;
    };
 
-  # Not sure if I need this if I'm not using a TWM?
-  # programs.nm-applet.enable = true;
+  # GNOME Exclusions
+  environment.gnome.excludePackages = with pkgs.gnome; [
+    baobab      # disk usage analyzer
+    cheese      # photo booth
+    # eog         # image viewer
+    epiphany    # web browser
+    pkgs.gedit       # text editor
+    simple-scan # document scanner
+    totem       # video player
+    yelp        # help viewer
+    # evince      # document viewer
+    file-roller # archive manager
+    geary       # email client
+    seahorse    # password manager
+    pkgs.snapshot    # camera
 
-  # Music Player Daemon
-  services.mpd = {
-    enable = true;
-    musicDirectory = "~/Music";
-    extraConfig = ''
-      audio_output {
-        type "pulse"
-        name "Pulseaudio"
-        server "127.0.0.1"
-      }
-    '';
-
-    # Optional:
-    # network.listenAddress = "any"; # if you want to allow non-localhost connections
-    startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
-  };
+    # these should be self explanatory
+    # gnome-calculator 
+    gnome-calendar 
+    gnome-characters 
+    gnome-clocks 
+    gnome-contacts
+    gnome-font-viewer
+    gnome-logs 
+    gnome-maps 
+    gnome-music 
+    # gnome-screenshot
+    # gnome-system-monitor 
+    gnome-weather 
+    # gnome-disk-utility 
+    pkgs.gnome-connections
+    pkgs.gnome-tour
+  ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
