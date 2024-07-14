@@ -73,26 +73,14 @@
     lfs.enable = true;
   };
 
-  # Virtualisation (Podman)
-  # Enable common container config files in /etc/containers
-  virtualisation.containers.enable = true;
-  virtualisation = {
-    podman = {
-      enable = true;
-
-      # Create a `docker` alias for podman, to use it as a drop-in replacement
-      dockerCompat = true;
-
-      # Required for containers under podman-compose to be able to talk to each other.
-      defaultNetwork.settings.dns_enabled = true;
-    };
-  };
+  # Virtualisation (Docker)
+  virtualisation.docker.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mmibbetson = {
     isNormalUser = true;
     description = "Matthew Ibbetson";
-    extraGroups = [ "networkmanager" "wheel" "plugdev" ];
+    extraGroups = [ "networkmanager" "wheel" "plugdev" "docker" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
 
@@ -123,17 +111,21 @@
       tokei
       papirus-icon-theme
       xclip
-      
+
+      # Sec Tools
+      ffuf
+      nmap
+      rustscan
+            
       # Virtualisation
       qemu
       quickemu
       quickgui
       distrobox
-      podman-compose
-      podman-desktop
       
       # Text Editors
-      emacs
+      neovim
+      micro
       jetbrains.rider
       vscode
 
@@ -151,17 +143,11 @@
       heroic
 
       # Programming Languages
-      guile
-      racket
-      clojure
-      babashka
-      leiningen
-      lua54Packages.lua
-      lua54Packages.fennel
+      go
       luajit
       rustup
-      zig
       gcc
+      clang
       gdb
       valgrind
       nodejs_22
@@ -277,12 +263,6 @@
   # };
 
   # List services that you want to enable:
-  
-  # Enable the emacs daemon
-  services.emacs = {
-    enable = true;
-    defaultEditor = true;
-  };
   
   # Enable the OpenSSH daemon
   services.openssh.enable = true;

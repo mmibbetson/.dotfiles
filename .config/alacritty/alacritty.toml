@@ -18,19 +18,19 @@ opacity = 0.8
 size = 16.0
 
 [font.bold]
-family = "IosevkaTerm Nerd Font"
+family = "IosevkaPrimeTerm Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "IosevkaTerm Nerd Font"
+family = "IosevkaPrimeTerm Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "IosevkaTerm Nerd Font"
+family = "IosevkaPrimeTerm Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "IosevkaTerm Nerd Font"
+family = "IosevkaPrimeTerm Nerd Font"
 style = "Regular"
 
 [cursor]

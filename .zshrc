@@ -33,6 +33,9 @@ FZF_DEFAULT_COMMAND="rg --files --hidden --follow -g \"!.git/\" 2> /dev/null"
 BAT_THEME="gruvbox-dark"
 
 # Path management
+# Zig binary
+add_to_path "$HOME/Projects/zig_projects/zig-linux-x86_64-0.14.0-dev.239+80d7e260d"
+
 # AppImages
 add_to_path "$HOME/appimages"
 
