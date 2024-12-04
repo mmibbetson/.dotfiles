@@ -86,6 +86,7 @@
 
       # CLI Programs
       alacritty
+      kitty
       starship
       fastfetch
       fzf
@@ -109,27 +110,25 @@
       navi
       hyperfine
       tokei
-      papirus-icon-theme
       xclip
+      openssl
+      doctl
+      zola
 
-      # Sec Tools
-      ffuf
-      nmap
-      rustscan
-            
       # Virtualisation
       qemu
       quickemu
       quickgui
       distrobox
-      
+
       # Text Editors
       neovim
-      micro
+      helix
       jetbrains.rider
       vscode
 
       # Graphical Programs
+      papirus-icon-theme
       gimp
       mpv
       discord
@@ -143,18 +142,26 @@
       heroic
 
       # Programming Languages
-      go
+      lua54Packages.lua
       luajit
+      luajitPackages.fennel
+      racket
+      guile
+      janet
+      jpm
+      go
       rustup
-      gcc
+      typst
       clang
+      lldb
+      gcc
       gdb
       valgrind
       nodejs_22
-      corepack_22
       deno
+      pnpm
       bun
-      dotnetCorePackages.dotnet_8.sdk    
+      dotnetCorePackages.dotnet_8.sdk
     ];
   };
 
@@ -244,7 +251,7 @@
   # Default Applications
   xdg.mime.defaultApplications = {
     "application/pdf" = "evince.desktop";       # Open PDF files in Evince
-    "application/epub" = "evince.desktop";       # Open epub files in Evince
+    "application/epub" = "evince.desktop";      # Open epub files in Evince
     "audio/*" = "mpv.desktop";                  # Open audio files in MPV
     "video/*" = "mpv.desktop";                  # Open video files in MPV
     "text/html" = "brave.desktop";              # Open HTML files in Brave browser
@@ -266,6 +273,10 @@
   
   # Enable the OpenSSH daemon
   services.openssh.enable = true;
+
+  # GPG
+  programs.gnupg.agent.enable = true;
+  programs.gnupg.agent.pinentryPackage = pkgs.pinentry-tty;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

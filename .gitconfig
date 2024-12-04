@@ -1,5 +1,5 @@
 [user]
-	name = Matthew Ibbetson
+	name = Matthew Mark Ibbetson
 	email = mmibbetson@gmail.com
 	username = mmibbetson
 [init]
@@ -8,6 +8,8 @@
 	ad = add
 	#############
 	br = branch
+	#############
+	sw = switch
 	#############
 	co = commit
 	#############
