@@ -51,6 +51,9 @@ require('lazy').setup({
   require 'plugins.luvit_meta',
   require 'plugins.lspconfig',
 
+  -- Treesitter.
+  require 'plugins.treesitter',
+
   -- Completion.
   require 'plugins.nvim_cmp',
 
