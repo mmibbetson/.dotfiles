@@ -89,4 +89,4 @@ Linux Configs & Dependencies
   - [[][Prettier]]
   - [[][ESLint]]
 - [[][Dotnet]]
-- [[][Rust]] *This is mostly for building from source and dependencies*
+- [[][Rust]]

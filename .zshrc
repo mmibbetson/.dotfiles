@@ -19,6 +19,11 @@ function add_to_path {
   esac
 }
 
+function dno() {
+    local regexp="$1"
+    rg --files "*${regexp}*" ~/Documents/notes | fzf | xargs nvim
+}
+
 ###############
 ### Aliases ###
 ###############

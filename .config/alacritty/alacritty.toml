@@ -1,17 +1,21 @@
+[general]
 live_config_reload = true
-
 import = [
   # uncomment the flavour you want below:
-  "~/.config/alacritty/gruvbox-dark.toml",
+  # "~/.config/alacritty/gruvbox-dark.toml",
   # "~/.config/alacritty/gruvbox-light.toml"
+  "~/.config/alacritty/catppuccin-latte.toml"
+  # "~/.config/alacritty/catppuccin-frappe.toml"
+  # "~/.config/alacritty/catppuccin-macchiato.toml"
+  # "~/.config/alacritty/catppuccin-mocha.toml"
 ]
 
-[shell]
+[terminal.shell]
 program = "zsh"
 
 [window]
 padding = { x = 10, y = 10 }
-# decorations = "None"
+decorations = "None"
 opacity = 1
 
 [font]
@@ -36,3 +40,4 @@ style = "Regular"
 [cursor]
 style = { shape = "Beam", blinking = "Off" }
 vi_mode_style = { shape = "Block", blinking = "Off" }
+

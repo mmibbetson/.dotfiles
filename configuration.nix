@@ -118,7 +118,6 @@
       # Virtualisation
       qemu
       quickemu
-      quickgui
       distrobox
 
       # Text Editors
@@ -145,10 +144,15 @@
       lua54Packages.lua
       luajit
       luajitPackages.fennel
+      luajitPackages.luarocks
       racket
       guile
       janet
       jpm
+      erlang
+      elixir
+      lfe
+      gleam
       go
       rustup
       typst
@@ -174,11 +178,10 @@
   security.sudo.enable = true;
   security.sudo.wheelNeedsPassword = false;
 
-  # Enable OpenGL
-  hardware.opengl = {
+  # Enable OpenGL (now graphics?)
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
   # NVidia
@@ -241,8 +244,10 @@
   # Fonts
   fonts.packages = with pkgs; [
     font-awesome
+    commit-mono
+    jetbrains-mono
     iosevka
-    (nerdfonts.override { fonts = [ "IosevkaTerm" ]; })
+    (nerdfonts.override { fonts = [ "IosevkaTerm" "CommitMono" "JetBrainsMono" ]; })
   ];
 
   # List packages installed in system profile.
@@ -257,8 +262,8 @@
     "text/html" = "brave.desktop";              # Open HTML files in Brave browser
     "application/xhtml+xml" = "brave.desktop";  # Open XHTML files in Brave browser
     "image/*" = "eog.desktop";                  # Open any other image types in Feh
-    "application/*" = "emacs.desktop";          # Open any other application types in Emacs
-    "text/*" = "emacs.desktop";                 # Open any other text files in Emacs
+    "application/*" = "nvim.desktop";           # Open any other application types in Neovim
+    "text/*" = "nvim.desktop";                  # Open any other text files in Neovim
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -291,5 +296,14 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
+  system.autoUpgrade = {
+    enable = true;
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "-L" # print build logs
+    ];
+    dates = "02:00";
+    randomizedDelaySec = "45min";
+  };
 }
