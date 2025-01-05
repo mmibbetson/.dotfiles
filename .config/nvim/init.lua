@@ -73,10 +73,13 @@ require('lazy').setup({
   require 'plugins.gitsigns',
 
   -- Filesystem in buffer.
-  -- require 'plugins.oil',
+  require 'plugins.oil',
 
   -- Convenient jump motions.
-  -- require 'plugins.flash',
+  require 'plugins.flash',
+
+  -- Formatting.
+  require 'plugins.conform',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

@@ -1,5 +1,5 @@
 return {
-  'echanovski/mini.nvim',
+  'echanovski/mini.pairs',
   version = '*',
   opts = {
     -- In which modes mappings from this `config` should be created

@@ -1,5 +1,5 @@
 return {
-  'echasnovski/mini.indentscope',
+  'echasnovski/mini.statusline',
   version = '*',
   opts = {
     -- Content of statusline as functions which return statusline string. See
