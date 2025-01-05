@@ -60,8 +60,11 @@ require('lazy').setup({
   -- Coloured TODO/NOTE/WARN/ERROR comments.
   require 'plugins.todo_comments',
 
-  -- Various small plugins.
-  require 'plugins.mini',
+  -- Various small mini.nvim plugins.
+  require 'plugins.ai',
+  require 'plugins.indentscope',
+  require 'plugins.statusline',
+  require 'plugins.pairs',
 
   -- Linting.
   require 'plugins.lint',
