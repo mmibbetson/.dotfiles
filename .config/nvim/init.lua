@@ -30,22 +30,6 @@ require('lazy').setup({
   -- Use `opts = {}` to force a plugin to be loaded.
   --
 
-  -- LSP Plugins
-  {
-    -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
-    -- used for completion, annotations and signatures of Neovim apis
-    'folke/lazydev.nvim',
-    ft = 'lua',
-    opts = {
-      library = {
-        -- Load luvit types when the `vim.uv` word is found
-        { path = 'luvit-meta/library', words = { 'vim%.uv' } },
-      },
-    },
-  },
-  { 'Bilal2453/luvit-meta', lazy = true },
-
-
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
@@ -55,17 +39,38 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
+  -- Colorscheme.
   require 'plugins.catppuccin',
   require 'plugins.which_key',
+
+  -- Fuzzy Finder.
   require 'plugins.telescope',
+
+  -- LSP Plugins.
+  require 'plugins.lazydev',
+  require 'plugins.luvit_meta',
   require 'plugins.lspconfig',
+
+  -- Completion.
   require 'plugins.nvim_cmp',
+
+  -- Coloured TODO/NOTE/WARN/ERROR comments.
   require 'plugins.todo_comments',
+
+  -- Various small plugins.
   require 'plugins.mini',
-  require 'plugins.indent_line',
+
+  -- Linting.
   require 'plugins.lint',
-  require 'plugins.autopairs',
+
+  -- Git modification signs.
   require 'plugins.gitsigns',
+
+  -- Filesystem in buffer.
+  -- require 'plugins.oil',
+
+  -- Convenient jump motions.
+  -- require 'plugins.flash',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
