@@ -1,0 +1,333 @@
+theme = "catppuccin_latte"
+
+[editor]
+# Number of lines of padding around the edge of the screen when scrolling
+scrolloff = 10
+
+# Enable mouse mode
+mouse = false
+
+# WARN: Not currently recognised.
+# Default register used for yank/paste
+# default-yank-register = "\""
+
+# Middle click paste support
+middle-click-paste = false
+
+# Number of lines to scroll per scroll wheel step
+scroll-lines = 5
+
+# Shell to use when running external commands
+# Unix: ["sh", "-c"]
+# Windows: ["cmd", "/C"]
+shell = ["sh", "-c"]
+
+# Line number display: 
+# "absolute" shows each line's number.
+# "relative" shows the distance from the current line.
+# When unfocused or in insert mode, "relative" still shows absolute line numbers.
+line-number = "relative"
+
+# Highlight all lines with a cursor
+cursorline = true
+
+# Highlight all columns with a cursor
+cursorcolumn = false
+
+# WARN: Not currently recognised.
+# Automatically add a line comment token if you create a new line inside a comment
+# continue-comments = true
+
+# Enable automatic pop-up of auto-completion
+auto-completion = true
+
+# WARN: Not currently recognised.
+# Enable filepath completion
+# Show files and directories if an existing path at the cursor was recognized,
+# either absolute or relative to the current opened document or current working directory (if the buffer is not yet saved).
+# path-completion = true
+
+# Enable automatic formatting on save
+auto-format = true
+
+# Time in milliseconds since last keypress before idle timers trigger
+idle-timeout = 250
+
+# Time in milliseconds after typing a word character before completions are shown
+# Set to 5 for instant.
+completion-timeout = 250
+
+# Whether to apply completion item instantly when selected
+preview-completion-insert = true
+
+# The min-length of the word under cursor to trigger autocompletion
+completion-trigger-len = 2
+
+# Set to true to make completions always replace the entire word and not just the part before the cursor
+completion-replace = false
+
+# Whether to display info boxes
+auto-info = true
+
+# Set to true to override automatic detection of terminal truecolor support in case of a false negative
+true-color = false
+
+# Set to true to override automatic detection of terminal undercurl support in case of a false negative
+undercurl = false
+
+# List of column positions at which to display rulers
+# Can be overridden by language-specific rulers in the languages.toml file
+rulers = []
+
+# Renders a line at the top of the editor displaying open buffers
+# Options: "always", "never", or "multiple" (only shown if more than one buffer is in use)
+bufferline = "multiple"
+
+# Whether to color the mode indicator with different colors depending on the mode itself
+color-modes = true
+
+# Maximum line length
+# Used for the :reflow command and soft-wrapping if soft-wrap.wrap-at-text-width is set
+text-width = 100
+
+# Directories relative to the workspace root that are treated as LSP roots
+# Should only be set in .helix/config.toml
+workspace-lsp-roots = []
+
+# The line ending to use for new documents
+# Options: native, lf, crlf, ff, cr, nel
+# native uses the platform's native line ending (crlf on Windows, otherwise lf).
+default-line-ending = "native"
+
+# Whether to automatically insert a trailing line-ending on write if missing
+insert-final-newline = true
+
+# Draw border around popup, menu, all, or none
+popup-border = "none"
+
+# How the indentation for a newly inserted line is computed:
+# "simple" copies the indentation level from the previous line,
+# "tree-sitter" computes the indentation based on the syntax tree,
+# "hybrid" combines both approaches.
+# Fallback order: hybrid -> tree-sitter -> simple
+indent-heuristic = "hybrid"
+
+# TODO: Adjust to match frequency of Colemak-DH keys.
+# The characters that are used to generate two-character jump labels
+# Characters at the start of the alphabet are used first.
+jump-label-alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+# WARN: Not currently recognised.
+# Minimum severity of diagnostics to render at the end of the line
+# Set to "disable" to disable entirely
+# Refer to the setting about inline-diagnostics for more details
+# end-of-line-diagnostics = "disable"
+
+# WARN: Not currently recognised.
+# Which API to use for clipboard interaction
+# Options: pasteboard (MacOS), wayland, x-clip, x-sel, win-32-yank, termux, tmux, windows, termcode, none, or a custom command set.
+# Platform and environment specific.
+# clipboard-provider = ""
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control", "read-only-indicator", "file-modification-indicator"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "register", "position", "position-percentage", "file-line-ending", "file-encoding"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+# Enables LSP integration
+# Setting to false will completely disable language servers regardless of language settings
+enable = true
+
+# Display LSP progress messages below the statusline
+display-messages = false
+
+# Enable automatic pop-up of signature help (parameter hints)
+auto-signature-help = true
+
+# Display inlay hints
+display-inlay-hints = false
+
+# Display docs under the signature help popup
+display-signature-help-docs = true
+
+# Enables snippet completions
+# Requires a server restart (:lsp-restart) to take effect after :config-reload/:set
+snippets = true
+
+# Include declaration in the goto references popup
+goto-reference-include-declaration = true
+
+[editor.cursor-shape]
+# Defines the shape of cursor in each mode. Valid values for these options are block, bar, underline, or hidden.
+normal = "block"
+insert = "bar"
+select = "underline"
+
+[editor.file-picker]
+# Enables ignoring hidden files
+hidden = true
+
+# Follow symlinks instead of ignoring them
+follow-symlinks = true
+
+# Ignore symlinks that point at files already shown in the picker
+deduplicate-links = true
+
+# Enables reading ignore files from parent directories
+parents = true
+
+# Enables reading .ignore files
+ignore = true
+
+# Enables reading .gitignore files
+git-ignore = true
+
+# Enables reading global .gitignore
+# The path is specified in git's config: core.excludesfile option
+git-global = true
+
+# Enables reading .git/info/exclude files
+git-exclude = true
+
+# Set with an integer value for maximum depth to recurse
+# Unset by default
+# max-depth = 2
+
+[editor.auto-pairs]
+'(' = ')'
+'[' = ']'
+'{' = '}'
+'"' = '"'
+'`' = '`'
+
+[editor.auto-save]
+# Enable automatic saving on the focus moving away from Helix
+# Requires focus event support from your terminal
+focus-lost = false
+
+# Enable automatic saving after the specified timeout in milliseconds has passed since the last edit
+after-delay.enable = false
+
+# Time in milliseconds since last edit before the auto save timer triggers
+after-delay.timeout = 3000
+
+[editor.search]
+# Enable smart case regex searching
+# (case-insensitive unless the pattern contains uppercase characters)
+smart-case = true
+
+# Whether the search should wrap around after depleting the matches
+wrap-around = true
+
+[editor.whitespace]
+# Whether to render whitespace
+# May be "all", "none", or a table with sub-keys (space, nbsp, nnbsp, tab, newline)
+[editor.whitespace.render]
+space = "none"
+nbsp = "all"
+nnbsp = "all"
+tab = "all"
+tabpad = "none"
+newline = "none"
+
+# Literal characters to use when rendering whitespace
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+nnbsp = "␣"
+tab = "→"
+tabpad = "·"
+newline = "⏎"
+
+[editor.indent-guides]
+# Whether to render indent guides
+render = true
+
+# Literal character to use for rendering the indent guide
+character = "│"
+
+# Number of indent levels to skip
+skip-levels = 1
+
+[editor.gutters]
+# Layout of gutters to display
+layout = ["diff", "diagnostics", "line-numbers", "spacer"]
+
+# Options for the line number gutter
+[editor.gutters.line-numbers]
+# Minimum number of characters to use for the line number gutter
+min-width = 1
+
+# Currently unused section for diagnostics
+# [editor.gutters.diagnostics]
+
+# Diff gutter displays colored bars for git diffs indicating line changes
+# Currently has no options
+# [editor.gutters.diff]
+
+# Currently unused section for spacer
+# [editor.gutters.spacer]
+
+[editor.soft-wrap]
+# Whether soft wrapping is enabled
+enable = false
+
+# Maximum free space left at the end of the line
+max-wrap = 20
+
+# Maximum indentation to carry over when soft wrapping a line
+max-indent-retain = 40
+
+# Text inserted before soft wrapped lines, highlighted with ui.virtual.wrap
+wrap-indicator = "↪"
+
+# Soft wrap at text-width instead of using the full viewport size
+wrap-at-text-width = false
+
+[editor.smart-tab]
+# If set to true, when the cursor is in a position with non-whitespace to its left,
+# instead of inserting a tab, it will run move_parent_node_end.
+# If there is only whitespace to the left, it inserts a tab as normal.
+# To explicitly insert a tab character, press Shift-tab (default bindings).
+enable = true
+
+# If true, the smart-tab command always takes precedence over menu navigation,
+# meaning the tab key cannot be used to cycle through menu items when menus are on screen.
+# Instead, use other bindings like arrow keys or C-n/C-p.
+supersede-menu = false
+
+# WARN: Not currently available.
+# [editor.inline-diagnostics]
+# # The minimum severity that a diagnostic must have to be shown inline on the line that contains the primary cursor.
+# # Set to "disable" to not show any diagnostics inline.
+# # This option does not have any effect when in insert-mode and will only take effect 350ms after moving the cursor to a different line.
+# cursor-line = "disable"
+
+# # The minimum severity that a diagnostic must have to be shown inline on a line that does not contain the cursor-line.
+# # Set to "disable" to not show any diagnostics inline.
+# other-lines = "disable"
+
+# # How many horizontal bars (─) are rendered before the diagnostic text.
+# prefix-len = 1
+
+# # Equivalent of the editor.soft-wrap.max-wrap option for diagnostics.
+# max-wrap = 20
+
+# # Maximum number of diagnostics to render inline for a given line.
+# max-diagnostics = 10
+
+# # The allowed values for cursor-line and other-lines are: error, warning, info, hint.
+
+[keys.normal]
+G = "goto_file_end"
+H = "goto_line_start"
+L = "goto_line_end"
+
+[keys.insert]
+
+[keys.select]

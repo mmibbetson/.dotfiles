@@ -1,0 +1,2 @@
+# This file can be used to tell the Helix file picker to ignore files.
+# The same ignore/unignore patterns as .gitignore apply.
