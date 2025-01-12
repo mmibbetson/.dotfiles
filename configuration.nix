@@ -114,6 +114,7 @@
       openssl
       doctl
       zola
+      pandoc
 
       # Virtualisation
       qemu
@@ -141,19 +142,10 @@
       heroic
 
       # Programming Languages
-      lua54Packages.lua
       luajit
-      luajitPackages.fennel
       luajitPackages.luarocks
-      racket
-      guile
-      janet
-      jpm
       erlang
       elixir
-      lfe
-      gleam
-      go
       rustup
       typst
       clang
@@ -166,6 +158,14 @@
       pnpm
       bun
       dotnetCorePackages.dotnet_8.sdk
+
+      # Language Servers & Formatters
+      nodePackages.prettier
+      yaml-language-server
+      typescript-language-server
+      elixir-ls
+      vscode-extensions.denoland.vscode-deno
+      vscode-langservers-extracted
     ];
   };
 
