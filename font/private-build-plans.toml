@@ -4,7 +4,7 @@ spacing = "normal" # "quasi-proportional" "term"
 serifs = "sans" # "slab"
 noCvSs = true # OpenType Features
 exportGlyphNames = false # Used for Kitty terminal apparently
-noLigation = false # can set this to true for no lig builds
+noLigation = true
 
 [buildPlans.IosevkaPrime.variants.design]
 underscore = "low"
@@ -13,8 +13,8 @@ percent = "rings-continuous-slash"
 lig-equal-chain = "without-notch"
 lig-hyphen-chain = "without-notch"
 
-  [buildPlans.IosevkaPrime.ligations]
-  inherits = "dlig"
+[buildPlans.IosevkaPrime.ligations]
+inherits = "dlig"
 
 # npm run build -- contents::IosevkaPrime
 # npm run build -- ttf::IosevkaPrime
