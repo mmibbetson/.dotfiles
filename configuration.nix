@@ -164,7 +164,6 @@
       yaml-language-server
       typescript-language-server
       elixir-ls
-      vscode-extensions.denoland.vscode-deno
       vscode-langservers-extracted
     ];
   };
