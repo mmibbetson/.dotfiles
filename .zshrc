@@ -21,7 +21,7 @@ function add_to_path {
 
 function dno() {
     local regexp="$1"
-    rg --files "*${regexp}*" ~/Documents/notes | fzf | xargs nvim
+    rg --files "*${regexp}*" ~/Documents/notes | fzf | xargs hx
 }
 
 ###############
