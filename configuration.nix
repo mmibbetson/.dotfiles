@@ -142,6 +142,7 @@
       heroic
 
       # Programming Languages
+      tree-sitter
       luajit
       luajitPackages.luarocks
       erlang
