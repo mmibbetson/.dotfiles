@@ -80,7 +80,7 @@ file-types = ["cs", "csx", "cake"]
 roots = ["sln", "csproj"]
 comment-token = "//"
 block-comment-tokens = { start = "/*", end = "*/" }
-indent = { tab-width = 4, unit = "\t" }
+indent = { tab-width = 4, unit = "    " }
 language-servers = [ "omnisharp" ]
 
 [language.auto-pairs]
@@ -442,12 +442,17 @@ language-servers = [ "marksman", "markdown-oxide" ]
 indent = { tab-width = 2, unit = "  " }
 block-comment-tokens = { start = "<!--", end = "-->" }
 
+[language.soft-wrap]
+enable = true
+max-wrap = 20
+max-indent-retain = 40
+wrap-indicator = "↪"
+wrap-at-text-width = true
+
 [language.auto-pairs]
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
-"'" = "'"
 '"' = '"'
 '`' = '`'
 
@@ -736,7 +741,7 @@ name = "djot"
 scope = "source.djot"
 file-types = ["dj"]
 block-comment-tokens = { start = "{%", end = "%}" }
-indent = { unit = "\t", tab-width = 2 }
+indent = { unit = "  ", tab-width = 2 }
 text-width = 80
 
 [language.soft-wrap]
