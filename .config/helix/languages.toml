@@ -22,7 +22,6 @@ persistent-diagnostic-sources = ["rustc", "clippy"]
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 '"' = '"'
 '`' = '`'
 
@@ -87,7 +86,6 @@ language-servers = [ "omnisharp" ]
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 "'" = "'"
 '"' = '"'
 '`' = '`'
@@ -148,7 +146,6 @@ indent = { tab-width = 2, unit = "  " }
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 "'" = "'"
 '"' = '"'
 '`' = '`'
@@ -169,7 +166,6 @@ indent = { tab-width = 2, unit = "  " }
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 "'" = "'"
 '"' = '"'
 '`' = '`'
@@ -188,7 +184,6 @@ indent = { tab-width = 4, unit = "    " }
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 "'" = "'"
 '"' = '"'
 '`' = '`'
@@ -210,7 +205,6 @@ indent = { tab-width = 2, unit = "  " }
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 "'" = "'"
 '"' = '"'
 '`' = '`'
@@ -244,7 +238,6 @@ grammar = "javascript"
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 "'" = "'"
 '"' = '"'
 '`' = '`'
@@ -266,7 +259,6 @@ indent = { tab-width = 2, unit = "  " }
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 "'" = "'"
 '"' = '"'
 '`' = '`'
@@ -287,7 +279,6 @@ indent = { tab-width = 2, unit = "  " }
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 "'" = "'"
 '"' = '"'
 '`' = '`'
@@ -306,7 +297,6 @@ indent = { tab-width = 2, unit = "  " }
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 "'" = "'"
 '"' = '"'
 '`' = '`'
@@ -344,7 +334,6 @@ indent = { tab-width = 2, unit = "  " }
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 "'" = "'"
 '"' = '"'
 '`' = '`'
@@ -409,7 +398,6 @@ indent = { tab-width = 2, unit = "  " }
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 "'" = "'"
 '"' = '"'
 '`' = '`'
@@ -427,7 +415,6 @@ injection-regex = "yml|yaml"
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 "'" = "'"
 '"' = '"'
 '`' = '`'
@@ -467,8 +454,6 @@ grammar = "markdown_inline"
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
-"'" = "'"
 '"' = '"'
 '`' = '`'
 
@@ -499,7 +484,6 @@ language-servers = [ "docker-langserver" ]
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 "'" = "'"
 '"' = '"'
 '`' = '`'
@@ -518,7 +502,6 @@ grammar = "yaml"
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 "'" = "'"
 '"' = '"'
 '`' = '`'
@@ -536,7 +519,6 @@ injection-regex = "sql"
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 "'" = "'"
 '"' = '"'
 '`' = '`'
@@ -550,6 +532,14 @@ shebangs = ["nu"]
 comment-token = "#"
 indent = { tab-width = 2, unit = "  " }
 language-servers = [ "nu-lsp" ]
+
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+"'" = "'"
+'"' = '"'
+'`' = '`'
 
 [[language]]
 name = "xml"
@@ -640,7 +630,6 @@ grammar = "bash"
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 "'" = "'"
 '"' = '"'
 '`' = '`'
@@ -711,7 +700,6 @@ indent = { tab-width = 2, unit = "  " }
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 "'" = "'"
 '"' = '"'
 '`' = '`'
@@ -731,7 +719,6 @@ language-servers = [ "erlang-ls", "elp" ]
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
 "'" = "'"
 '"' = '"'
 '`' = '`'
@@ -739,7 +726,7 @@ language-servers = [ "erlang-ls", "elp" ]
 [[language]]
 name = "djot"
 scope = "source.djot"
-file-types = ["dj"]
+file-types = ["dj", "djot"]
 block-comment-tokens = { start = "{%", end = "%}" }
 indent = { unit = "  ", tab-width = 2 }
 text-width = 80
@@ -760,4 +747,4 @@ wrap-at-text-width = true
 
 [[grammar]]
 name = "djot"
-source = { git = "https://github.com/treeman/tree-sitter-djot", rev = "886601b67d1f4690173a4925c214343c30704d32" }
+source = { git = "https://github.com/treeman/tree-sitter-djot", rev = "67e6e23ba7be81a4373e0f49e21207bdc32d12a5" }

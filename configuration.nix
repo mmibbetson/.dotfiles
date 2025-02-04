@@ -4,7 +4,10 @@
 
 { config, pkgs, ... }:
 
-{
+let
+  # Opt-in unstable packages.
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in {
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
@@ -88,13 +91,15 @@
       alacritty
       kitty
       starship
+      nushell
       fastfetch
       fzf
       git
+      lazygit
       stow
+      curl
       wget
       zip
-      curl
       unzip
       ripgrep
       fd
@@ -103,10 +108,7 @@
       eza
       zoxide
       jq
-      yq
-      lazygit
       bottom
-      yazi
       navi
       hyperfine
       tokei
@@ -115,6 +117,7 @@
       doctl
       zola
       pandoc
+      aider-chat
 
       # Virtualisation
       qemu
@@ -122,8 +125,7 @@
       distrobox
 
       # Text Editors
-      neovim
-      helix
+      unstable.helix
       jetbrains.rider
       vscode
 
@@ -136,35 +138,38 @@
       firefox
       gparted
       postman
-      gnome.gnome-tweaks
+      gnome-tweaks
       protonup-qt
       retroarchFull
       heroic
+      bookworm
+      meld
+      # bitwig-studio
 
       # Programming Languages
       tree-sitter
       luajit
       luajitPackages.luarocks
-      erlang
-      elixir
+      luajitPackages.fennel
       rustup
       typst
+      racket
+      guile
       clang
+      janet
+      jpm
       lldb
       gcc
       gdb
       valgrind
       nodejs_22
-      deno
       pnpm
-      bun
       dotnetCorePackages.dotnet_8.sdk
 
       # Language Servers & Formatters
       nodePackages.prettier
       yaml-language-server
       typescript-language-server
-      elixir-ls
       vscode-langservers-extracted
     ];
   };
@@ -204,40 +209,6 @@
     desktopManager.xterm.enable = false;
    };
 
-  # GNOME Exclusions
-  environment.gnome.excludePackages = with pkgs.gnome; [
-    baobab      # disk usage analyzer
-    cheese      # photo booth
-    # eog         # image viewer
-    epiphany    # web browser
-    pkgs.gedit       # text editor
-    simple-scan # document scanner
-    totem       # video player
-    yelp        # help viewer
-    # evince      # document viewer
-    file-roller # archive manager
-    geary       # email client
-    seahorse    # password manager
-    pkgs.snapshot    # camera
-
-    # these should be self explanatory
-    # gnome-calculator 
-    gnome-calendar 
-    gnome-characters 
-    gnome-clocks 
-    gnome-contacts
-    gnome-font-viewer
-    gnome-logs 
-    gnome-maps 
-    gnome-music 
-    # gnome-screenshot
-    # gnome-system-monitor 
-    gnome-weather 
-    # gnome-disk-utility 
-    pkgs.gnome-connections
-    pkgs.gnome-tour
-  ];
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -256,7 +227,7 @@
   # Default Applications
   xdg.mime.defaultApplications = {
     "application/pdf" = "evince.desktop";       # Open PDF files in Evince
-    "application/epub" = "evince.desktop";      # Open epub files in Evince
+    "application/epub" = "bookworm.desktop";      # Open epub files in Evince
     "audio/*" = "mpv.desktop";                  # Open audio files in MPV
     "video/*" = "mpv.desktop";                  # Open video files in MPV
     "text/html" = "brave.desktop";              # Open HTML files in Brave browser
