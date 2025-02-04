@@ -7,9 +7,8 @@ scrolloff = 10
 # Enable mouse mode
 mouse = false
 
-# WARN: Not currently recognised.
 # Default register used for yank/paste
-# default-yank-register = "\""
+default-yank-register = "\""
 
 # Middle click paste support
 middle-click-paste = false
@@ -20,7 +19,7 @@ scroll-lines = 5
 # Shell to use when running external commands
 # Unix: ["sh", "-c"]
 # Windows: ["cmd", "/C"]
-shell = ["sh", "-c"]
+# shell = ["sh", "-c"]
 
 # Line number display: 
 # "absolute" shows each line's number.
@@ -34,18 +33,16 @@ cursorline = true
 # Highlight all columns with a cursor
 cursorcolumn = false
 
-# WARN: Not currently recognised.
 # Automatically add a line comment token if you create a new line inside a comment
-# continue-comments = true
+continue-comments = false
 
 # Enable automatic pop-up of auto-completion
 auto-completion = true
 
-# WARN: Not currently recognised.
 # Enable filepath completion
 # Show files and directories if an existing path at the cursor was recognized,
 # either absolute or relative to the current opened document or current working directory (if the buffer is not yet saved).
-# path-completion = true
+path-completion = true
 
 # Enable automatic formatting on save
 auto-format = true
@@ -112,18 +109,11 @@ popup-border = "none"
 # Fallback order: hybrid -> tree-sitter -> simple
 indent-heuristic = "hybrid"
 
-# TODO: Adjust to match frequency of Colemak-DH keys.
 # The characters that are used to generate two-character jump labels
 # Characters at the start of the alphabet are used first.
-jump-label-alphabet = "abcdefghijklmnopqrstuvwxyz"
+# The letters chosen are based on the Colemak-DH layout.
+jump-label-alphabet = "esntiroahdclpufywqbjgmvkxz"
 
-# WARN: Not currently recognised.
-# Minimum severity of diagnostics to render at the end of the line
-# Set to "disable" to disable entirely
-# Refer to the setting about inline-diagnostics for more details
-# end-of-line-diagnostics = "disable"
-
-# WARN: Not currently recognised.
 # Which API to use for clipboard interaction
 # Options: pasteboard (MacOS), wayland, x-clip, x-sel, win-32-yank, termux, tmux, windows, termcode, none, or a custom command set.
 # Platform and environment specific.
@@ -301,27 +291,27 @@ enable = true
 # Instead, use other bindings like arrow keys or C-n/C-p.
 supersede-menu = false
 
-# WARN: Not currently available.
-# [editor.inline-diagnostics]
-# # The minimum severity that a diagnostic must have to be shown inline on the line that contains the primary cursor.
-# # Set to "disable" to not show any diagnostics inline.
-# # This option does not have any effect when in insert-mode and will only take effect 350ms after moving the cursor to a different line.
-# cursor-line = "disable"
+[editor.inline-diagnostics]
+# The allowed values for cursor-line and other-lines are: error, warning, info, hint.
+# 
+# The minimum severity that a diagnostic must have to be shown inline on the line that contains the primary cursor.
+# Set to "disable" to not show any diagnostics inline.
+# This option does not have any effect when in insert-mode and will only take effect 350ms after moving the cursor to a different line.
+cursor-line = "error"
 
-# # The minimum severity that a diagnostic must have to be shown inline on a line that does not contain the cursor-line.
-# # Set to "disable" to not show any diagnostics inline.
-# other-lines = "disable"
+# The minimum severity that a diagnostic must have to be shown inline on a line that does not contain the cursor-line.
+# Set to "disable" to not show any diagnostics inline.
+other-lines = "error"
 
-# # How many horizontal bars (─) are rendered before the diagnostic text.
-# prefix-len = 1
+# How many horizontal bars (─) are rendered before the diagnostic text.
+prefix-len = 1
 
-# # Equivalent of the editor.soft-wrap.max-wrap option for diagnostics.
-# max-wrap = 20
+# Equivalent of the editor.soft-wrap.max-wrap option for diagnostics.
+max-wrap = 20
 
-# # Maximum number of diagnostics to render inline for a given line.
-# max-diagnostics = 10
+# Maximum number of diagnostics to render inline for a given line.
+max-diagnostics = 10
 
-# # The allowed values for cursor-line and other-lines are: error, warning, info, hint.
 
 [keys.normal]
 G = "goto_file_end"
