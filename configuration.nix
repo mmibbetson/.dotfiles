@@ -89,7 +89,6 @@ in {
 
       # CLI Programs
       alacritty
-      kitty
       starship
       nushell
       fastfetch
@@ -114,7 +113,6 @@ in {
       tokei
       xclip
       openssl
-      doctl
       zola
       pandoc
       aider-chat
@@ -144,13 +142,13 @@ in {
       heroic
       bookworm
       meld
-      # bitwig-studio
 
       # Programming Languages
       tree-sitter
       luajit
       luajitPackages.luarocks
       luajitPackages.fennel
+      go
       rustup
       typst
       racket
@@ -174,14 +172,9 @@ in {
     ];
   };
 
-  # Steam
-  hardware.steam-hardware.enable = true;
-  programs.steam.enable = true;
-  programs.steam.remotePlay.openFirewall = true;
-
   # Su stuff
   security.sudo.enable = true;
-  security.sudo.wheelNeedsPassword = false;
+  security.sudo.wheelNeedsPassword = true;
 
   # Enable OpenGL (now graphics?)
   hardware.graphics = {
@@ -207,7 +200,7 @@ in {
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
     desktopManager.xterm.enable = false;
-   };
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

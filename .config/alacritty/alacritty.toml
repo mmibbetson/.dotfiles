@@ -4,10 +4,10 @@ import = [
   # uncomment the flavour you want below:
   # "~/.config/alacritty/gruvbox-dark.toml",
   # "~/.config/alacritty/gruvbox-light.toml"
-  "~/.config/alacritty/catppuccin-latte.toml"
+  # "~/.config/alacritty/catppuccin-latte.toml"
   # "~/.config/alacritty/catppuccin-frappe.toml"
   # "~/.config/alacritty/catppuccin-macchiato.toml"
-  # "~/.config/alacritty/catppuccin-mocha.toml"
+  "~/.config/alacritty/catppuccin-mocha.toml"
 ]
 
 [terminal.shell]
@@ -22,19 +22,19 @@ opacity = 1
 size = 16.0
 
 [font.bold]
-family = "IosevkaPrimeTerm Nerd Font"
+family = "IosevkaTerm Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "IosevkaPrimeTerm Nerd Font"
+family = "IosevkaTerm Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "IosevkaPrimeTerm Nerd Font"
+family = "IosevkaTerm Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "IosevkaPrimeTerm Nerd Font"
+family = "IosevkaTerm Nerd Font"
 style = "Regular"
 
 [cursor]
