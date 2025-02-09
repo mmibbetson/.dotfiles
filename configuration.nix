@@ -144,6 +144,7 @@ in {
       heroic
       bookworm
       meld
+      vcv-rack
       # bitwig-studio
 
       # Programming Languages
@@ -164,6 +165,8 @@ in {
       valgrind
       nodejs_22
       pnpm
+      bun
+      deno
       dotnetCorePackages.dotnet_8.sdk
 
       # Language Servers & Formatters

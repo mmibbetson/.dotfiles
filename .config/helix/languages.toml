@@ -433,7 +433,7 @@ block-comment-tokens = { start = "<!--", end = "-->" }
 enable = true
 max-wrap = 20
 max-indent-retain = 40
-wrap-indicator = "↪"
+wrap-indicator = ""
 wrap-at-text-width = true
 
 [language.auto-pairs]
@@ -678,6 +678,13 @@ block-comment-tokens = { start = "/*", end = "*/" }
 language-servers = ["tinymist", "typst-lsp"]
 indent = { tab-width = 2, unit = "  " }
 
+[language.soft-wrap]
+enable = true
+max-wrap = 20
+max-indent-retain = 40
+wrap-indicator = ""
+wrap-at-text-width = true
+
 [language.auto-pairs]
 '(' = ')'
 '{' = '}'
@@ -729,13 +736,13 @@ scope = "source.djot"
 file-types = ["dj", "djot"]
 block-comment-tokens = { start = "{%", end = "%}" }
 indent = { unit = "  ", tab-width = 2 }
-text-width = 80
+# text-width = 100
 
 [language.soft-wrap]
 enable = true
 max-wrap = 20
 max-indent-retain = 40
-wrap-indicator = "↪"
+wrap-indicator = ""
 wrap-at-text-width = true
 
 [language.auto-pairs]
