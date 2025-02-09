@@ -66,3 +66,5 @@ alias zi = __zoxide_zi
   source ~/.zoxide.nu
 #
 # Note: zoxide only supports Nushell v0.89.0+.
+
+source ./themes/catppuccin_latte.nu
