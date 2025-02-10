@@ -76,20 +76,24 @@ in {
     lfs.enable = true;
   };
 
-  # Virtualisation (Docker)
+  # Virtualisation
   virtualisation.docker.enable = true;
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["mmibbetson"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mmibbetson = {
     isNormalUser = true;
     description = "Matthew Ibbetson";
-    extraGroups = [ "networkmanager" "wheel" "plugdev" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "plugdev" "docker" "libvirtd" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
 
       # CLI Programs
       alacritty
-      kitty
+      ghostty
       starship
       nushell
       fastfetch
@@ -109,20 +113,14 @@ in {
       zoxide
       jq
       bottom
-      navi
       hyperfine
       tokei
       xclip
       openssl
-      doctl
       zola
       pandoc
-      aider-chat
-
-      # Virtualisation
-      qemu
-      quickemu
-      distrobox
+      ollama
+      ollama-cuda
 
       # Text Editors
       unstable.helix
@@ -144,34 +142,38 @@ in {
       heroic
       bookworm
       meld
-      vcv-rack
+      # vcv-rack
       # bitwig-studio
 
       # Programming Languages
       tree-sitter
       luajit
       luajitPackages.luarocks
-      luajitPackages.fennel
+      erlang_27
+      rebar3
+      erlang-language-platform
+      elixir_1_18
+      livebook
       rustup
+      rustlings
       typst
       racket
-      guile
       clang
-      janet
-      jpm
       lldb
       gcc
       gdb
       valgrind
       nodejs_22
       pnpm
-      bun
-      deno
+      # bun
+      # deno
       dotnetCorePackages.dotnet_8.sdk
 
       # Language Servers & Formatters
       nodePackages.prettier
       yaml-language-server
+      erlang-ls
+      elixir-ls
       typescript-language-server
       vscode-langservers-extracted
     ];
