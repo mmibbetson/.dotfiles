@@ -1,5 +1,3 @@
-# use-grammars = { only = [ "djot" ]}
-
 [[language]]
 name = "rust"
 scope = "source.rust"
