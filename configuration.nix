@@ -83,6 +83,10 @@ in {
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
 
+  nixpkgs.config.packageOverrides = pkgs: {
+    dn = pkgs.callPackage /home/mmibbetson/code/dn/default.nix { };
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mmibbetson = {
     isNormalUser = true;
@@ -105,6 +109,7 @@ in {
       wget
       zip
       unzip
+      just
       ripgrep
       fd
       sd
@@ -118,20 +123,39 @@ in {
       xclip
       openssl
       zola
+      mdbook
       pandoc
-      ollama
-      ollama-cuda
+      # ollama
+      # ollama-cuda
+      typst
+
+      # Self-Packaged
+      dn
 
       # Text Editors
       unstable.helix
       jetbrains.rider
       vscode
 
+      # Hyprland Stuff
+      nvidia-vaapi-driver
+      networkmanagerapplet
+      udiskie
+      copyq
+      waybar
+      fuzzel
+      mako
+      hyprpaper
+      hyprsunset
+      hyprpolkitagent
+      hyprcursor
+
       # Graphical Programs
       papirus-icon-theme
       gimp
       mpv
       discord
+      vesktop
       brave
       firefox
       gparted
@@ -142,40 +166,45 @@ in {
       heroic
       bookworm
       meld
-      # vcv-rack
-      # bitwig-studio
 
-      # Programming Languages
+      # Database
+      postgresql_17
+      postgresql17Packages.pgvector
+
+      # Python
+      python313
+      ruff
+      uv
+      
+      # Rust
+      rustup
+      bacon
+      rustlings
+      lldb
+
+      # General Programming
       tree-sitter
       luajit
       luajitPackages.luarocks
-      erlang_27
-      rebar3
-      erlang-language-platform
-      elixir_1_18
-      livebook
-      rustup
-      rustlings
-      typst
-      racket
+
+      # C/C++
       clang
-      lldb
       gcc
       gdb
       valgrind
+
+      # Web
       nodejs_22
       pnpm
-      # bun
-      # deno
-      dotnetCorePackages.dotnet_8.sdk
-
-      # Language Servers & Formatters
       nodePackages.prettier
-      yaml-language-server
-      erlang-ls
-      elixir-ls
       typescript-language-server
       vscode-langservers-extracted
+
+      # Dotnet
+      dotnetCorePackages.dotnet_9.sdk
+
+      # Language Servers & Formatters
+      yaml-language-server
     ];
   };
 
@@ -213,6 +242,16 @@ in {
     desktopManager.gnome.enable = true;
     desktopManager.xterm.enable = false;
    };
+
+  ## Experimental Hyprland Stuff
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+    xwayland.enable = true;
+  };
+
+  programs.hyprlock.enable = true;
+  services.hypridle.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
