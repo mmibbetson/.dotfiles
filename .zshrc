@@ -28,12 +28,14 @@ function dno() {
 ### Aliases ###
 ###############
 
+alias l="ls"
 alias ls="eza --group-directories-first --color=auto --icons=auto"
 alias la="eza --all --group-directories-first --color=auto --icons=auto"
 alias ll="eza --long --group-directories-first --color=auto --icons=auto"
 alias lla="eza --long --all --group-directories-first --color=auto --icons=auto"
 alias tree="eza --tree --group-directories-first --color=auto --icons=auto"
 alias lzg="lazygit"
+alias lzd="lazydocker"
 
 ####################
 ### Shell Config ###
@@ -58,6 +60,9 @@ BAT_THEME="gruvbox-dark"
 ############
 ### Path ###
 ############
+
+# Home .local bin
+add_to_path "$HOME/.local/bin"
 
 # User binaries
 # add_to_path "$HOME/bin"
