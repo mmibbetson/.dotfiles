@@ -4,34 +4,3 @@
 	username = mmibbetson
 [init]
 	defaultBranch = main
-[alias]
-	ad = add
-	#############
-	br = branch
-	#############
-	sw = switch
-	#############
-	co = commit
-	#############
-	com = commit --message
-	#############
-	di = diff
-	#############
-	fe = fetch
-	#############
-	ch = checkout
-	#############
-	ps = push
-	#############
-	pl = pull
-	#############
-	plr = pull --rebase
-	#############
-	me = merge
-	#############
-	re = rebase
-	#############
-	st = status
-	#############
-	cfg = config
-	#############

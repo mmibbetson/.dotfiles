@@ -53,6 +53,13 @@ completion = [ { name = "lldb connect url", default = "connect://localhost:3333"
 args = { attachCommands = [ "platform select remote-gdb-server", "platform connect {0}", "file {1}", "attach {2}" ] }
 
 [[language]]
+name = "go"
+
+[[language-server.gopls.config]]
+"formatting.gofumpt" = true
+"ui.diagnostic.staticcheck" = true
+
+[[language]]
 name = "toml"
 scope = "source.toml"
 injection-regex = "toml"

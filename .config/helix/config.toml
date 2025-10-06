@@ -231,7 +231,7 @@ space = "·"
 nbsp = "⍽"
 nnbsp = "␣"
 tab = "→"
-tabpad = "·"
+tabpad = " "
 newline = "⏎"
 
 [editor.indent-guides]
@@ -318,9 +318,18 @@ G = "goto_file_end"
 H = "goto_line_start"
 L = "goto_line_end"
 
+[keys.normal."space"]
+q = ":write-buffer-close"
+Q = ":write-quit-all"
+
 [keys.insert]
 
 [keys.select]
 G = "goto_file_end"
 H = "goto_line_start"
 L = "goto_line_end"
+
+[keys.select."space"]
+q = ":write-buffer-close"
+Q = ":write-quit-all"
+

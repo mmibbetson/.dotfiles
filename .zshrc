@@ -78,16 +78,24 @@ add_to_path "$HOME/scripts"
 # add_to_path "$HOME/.dotnet/tools"
 
 # Rust
-# add_to_path "$HOME/.cargo/bin"
-# add_to_path "$HOME/.cargo/env"
+add_to_path "$HOME/.cargo/bin"
+add_to_path "$HOME/.cargo/env"
+
+# Elixir
+add_to_path "$HOME/.local/bin/elixir-ls"
 
 ######################
 ### Initialisation ###
 ######################
 
-# Prompt
+# Starship Prompt
 eval "$(starship init zsh)"
 
-# Zoxide
+# Zoxide File Traversal
 eval "$(zoxide init zsh)"
 
+# Fnm (to remove)
+eval "$(fnm env --use-on-cd --shell zsh)"
+
+# Mise
+eval "$(~/.local/bin/mise activate zsh)"
