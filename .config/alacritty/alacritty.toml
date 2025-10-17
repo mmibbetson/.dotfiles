@@ -2,10 +2,13 @@
 live_config_reload = true
 import = [
   # uncomment the flavour you want below:
+  "~/.config/alacritty/rose-pine.toml"
+  # "~/.config/alacritty/rose-pine-moon.toml"
+  # "~/.config/alacritty/rose-pine-dawn.toml"
   # "~/.config/alacritty/gruvbox-dark.toml",
   # "~/.config/alacritty/gruvbox-light.toml"
   # "~/.config/alacritty/catppuccin-latte.toml"
-  "~/.config/alacritty/catppuccin-frappe.toml"
+  # "~/.config/alacritty/catppuccin-frappe.toml"
   # "~/.config/alacritty/catppuccin-macchiato.toml"
   # "~/.config/alacritty/catppuccin-mocha.toml"
 ]
