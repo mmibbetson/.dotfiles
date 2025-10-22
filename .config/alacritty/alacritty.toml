@@ -18,7 +18,7 @@ program = "zsh"
 
 [window]
 padding = { x = 10, y = 10 }
-decorations = "None"
+# decorations = "None"
 opacity = 1
 
 [font]
