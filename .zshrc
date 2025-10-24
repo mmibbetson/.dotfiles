@@ -84,6 +84,17 @@ add_to_path "$HOME/.cargo/env"
 # Elixir
 add_to_path "$HOME/.local/bin/elixir-ls"
 
+#############################
+### Environment Variables ###
+#############################
+
+# pnpm
+export PNPM_HOME="/home/mmibbetson/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
 ######################
 ### Initialisation ###
 ######################
@@ -93,9 +104,6 @@ eval "$(starship init zsh)"
 
 # Zoxide File Traversal
 eval "$(zoxide init zsh)"
-
-# Fnm (to remove)
-eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Mise
 eval "$(~/.local/bin/mise activate zsh)"
