@@ -2,6 +2,7 @@
 elixir = "1.18.4-otp-27"
 erlang = "27"
 go = "1.25.3"
+zig = "master"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python"]

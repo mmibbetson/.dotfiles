@@ -8,6 +8,12 @@ zstyle :compinstall filename '/var/home/mmibbetson/.zshrc'
 autoload -Uz compinit
 compinit
 
+###############
+### Vi Mode ###
+###############
+
+set -o vi
+
 #################
 ### Functions ###
 #################
@@ -83,6 +89,9 @@ add_to_path "$HOME/.cargo/env"
 
 # Elixir
 add_to_path "$HOME/.local/bin/elixir-ls"
+
+# Zig
+add_to_path "$HOME/Code/zls/zig-out/bin"
 
 #############################
 ### Environment Variables ###

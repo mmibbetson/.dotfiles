@@ -5,6 +5,7 @@ injection-regex = "rs|rust"
 file-types = ["rs"]
 roots = ["Cargo.toml", "Cargo.lock"]
 shebangs = ["rust-script", "cargo"]
+formatter = { command = "rustfmt" }
 auto-format = true
 comment-tokens = ["//", "///", "//!"]
 block-comment-tokens = [
