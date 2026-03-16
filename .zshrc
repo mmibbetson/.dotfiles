@@ -90,6 +90,10 @@ add_to_path "$HOME/.cargo/env"
 # Elixir
 add_to_path "$HOME/.local/bin/elixir-ls"
 
+# Go
+add_to_path "/usr/local/go/bin"
+add_to_path "$HOME/go/bin"
+
 # Zig
 add_to_path "$HOME/Code/zls/zig-out/bin"
 
@@ -113,6 +117,3 @@ eval "$(starship init zsh)"
 
 # Zoxide File Traversal
 eval "$(zoxide init zsh)"
-
-# Mise
-eval "$(~/.local/bin/mise activate zsh)"

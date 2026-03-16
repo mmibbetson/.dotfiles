@@ -297,7 +297,7 @@ supersede-menu = false
 # The minimum severity that a diagnostic must have to be shown inline on the line that contains the primary cursor.
 # Set to "disable" to not show any diagnostics inline.
 # This option does not have any effect when in insert-mode and will only take effect 350ms after moving the cursor to a different line.
-cursor-line = "error"
+cursor-line = "warning"
 
 # The minimum severity that a diagnostic must have to be shown inline on a line that does not contain the cursor-line.
 # Set to "disable" to not show any diagnostics inline.
